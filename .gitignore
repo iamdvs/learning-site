@@ -3,5 +3,8 @@
 *.pyc
 /__pycache__
 *.jpg
+*.bashrc
 
-
+index/migrations
+/media
+.vscode/

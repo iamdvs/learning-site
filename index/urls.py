@@ -5,5 +5,5 @@ from .views import *
 
 urlpatterns = [
     path('',index,name="index"),
-    path('series/',Series.as_view(),name="series"),
+    path('series/',Seri.as_view(),name="series"),
 ]

@@ -20,14 +20,19 @@
 <div class="container mt-5">
 
 <div class="row">
-    <div class="col-md-3">
+
+    {% if series %}
+        {% for seri in series %}
+        <div class="col-md-3">
             <!-- Card Regular -->
 <div class="card card-cascade">
 
   <!-- Card image -->
   <div class="view view-cascade overlay">
-    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/men.jpg" alt="Card image cap">
+    <img class="card-img-top" src="/media/{{ seri.series_photo }}" alt="Card image cap">
     <a>
+
+      
       <div class="mask rgba-white-slight"></div>
     </a>
   </div>
@@ -36,11 +41,11 @@
   <div class="card-body card-body-cascade text-center">
 
     <!-- Title -->
-    <h5 class="card-title"><strong>آموزش جاوااسکریپت</strong></h5>
+    <h5 class="card-title"><strong>{{ seri.issue }}</strong></h5>
     <!-- Subtitle -->
-    <h6 class="font-weight-bold indigo-text py-2">Web developer</h6>
+    <h6 class="font-weight-bold indigo-text py-2">{{ seri.teacher}}</h6>
     <!-- Text -->
-    <p class="card-text">زبان برنامه نویسی جاوا اسکرپیت جزو معدود زبان‌هایی است که توانسته دنیای وب و اینترنت را بیش از سایر زبان‌های برنامه نویسی تحت تأثیر خود قرار دهد و امر...
+    <p class="card-text">{{ seri.explanation }}
     </p>
 
   </div>
@@ -55,129 +60,13 @@
 
         
         </div>
+        {% endfor %}
 
 
 
+    {% endif %}
 
-
-
-        <div class="col-md-3">
-            <!-- Card Regular -->
-<div class="card card-cascade">
-
-  <!-- Card image -->
-  <div class="view view-cascade overlay">
-    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/men.jpg" alt="Card image cap">
-    <a>
-      <div class="mask rgba-white-slight"></div>
-    </a>
-  </div>
-
-  <!-- Card content -->
-  <div class="card-body card-body-cascade text-center">
-
-    <!-- Title -->
-    <h4 class="card-title"><strong>Billy Coleman</strong></h4>
-    <!-- Subtitle -->
-    <h6 class="font-weight-bold indigo-text py-2">Web developer</h6>
-    <!-- Text -->
-    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, ex, recusandae. Facere modi sunt, quod quibusdam.
-    </p>
-
-  </div>
-
-  <!-- Card footer -->
-  <div class="card-footer text-muted text-center">
-    2 days ago
-  </div>
-
-</div>
-<!-- Card Regular -->
-
-        
-        </div>
-
-
-
-
-        <div class="col-md-3">
-            <!-- Card Regular -->
-<div class="card card-cascade">
-
-  <!-- Card image -->
-  <div class="view view-cascade overlay">
-    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/men.jpg" alt="Card image cap">
-    <a>
-      <div class="mask rgba-white-slight"></div>
-    </a>
-  </div>
-
-  <!-- Card content -->
-  <div class="card-body card-body-cascade text-center">
-
-    <!-- Title -->
-    <h4 class="card-title"><strong>Billy Coleman</strong></h4>
-    <!-- Subtitle -->
-    <h6 class="font-weight-bold indigo-text py-2">Web developer</h6>
-    <!-- Text -->
-    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, ex, recusandae. Facere modi sunt, quod quibusdam.
-    </p>
-
-  </div>
-
-  <!-- Card footer -->
-  <div class="card-footer text-muted text-center">
-    2 days ago
-  </div>
-
-</div>
-<!-- Card Regular -->
-
-        
-        </div>
-
-
-
-
-
-        <div class="col-md-3">
-            <!-- Card Regular -->
-<div class="card card-cascade">
-
-  <!-- Card image -->
-  <div class="view view-cascade overlay">
-    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/men.jpg" alt="Card image cap">
-    <a>
-      <div class="mask rgba-white-slight"></div>
-    </a>
-  </div>
-
-  <!-- Card content -->
-  <div class="card-body card-body-cascade text-center">
-
-    <!-- Title -->
-    <h4 class="card-title"><strong>Billy Coleman</strong></h4>
-    <!-- Subtitle -->
-    <h6 class="font-weight-bold indigo-text py-2">Web developer</h6>
-    <!-- Text -->
-    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, ex, recusandae. Facere modi sunt, quod quibusdam.
-    </p>
-
-
-  </div>
-
-  <!-- Card footer -->
-  <div class="card-footer text-muted text-center">
-    2 days ago
-  </div>
-
-</div>
-<!-- Card Regular -->
-
-        
-        </div>
-
-
+  
 </div>
 </div>
 
