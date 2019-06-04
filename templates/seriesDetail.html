@@ -53,18 +53,11 @@
             <p class="text-right mt-4">{{ des.issue }}</p>
 
                 <tbody>
-                {% for video in videos %}
                   <tr>
-                    <td class="text-center">{{ video.id }}</td>
-
-                        <td class="text-right">{{ video.title }}</td>
+                    <td class="text-center">{{ des.id }}</td>
+                        <td class="text-right"><a href="{{ des.links }}">link</a></td>
                         <td></td>
-
-
-                    <td>{{ video.type_of }}</td>
- 
                   </tr>
-                  {% endfor %}
 
                 </tbody>
               </table>
