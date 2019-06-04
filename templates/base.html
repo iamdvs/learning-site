@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Material Design Bootstrap</title>
+  <title> Dvs Security | دوس سکوریتی</title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
   <!-- Bootstrap core CSS -->
@@ -36,15 +36,14 @@
 <div class="collapse navbar-collapse" id="basicExampleNav">
 
       <ul class="navbar-nav float-right">
-          <li class="nav-item active">
-              <a class="nav-link" href="#">صفحه ی اصلی 
-                  <span class="sr-only">(current)</span>
+          <li class="nav-item {% if request.resolver_match.url_name == 'index' %}active{% endif %} ">
+              <a class="nav-link" href="/">صفحه ی اصلی 
               </a>
           </li>
-          <li class="nav-item pr-2">
+          <li class="nav-item pr-2 {% if request.resolver_match.url_name == 'bahs' %}active{% endif %} ">
               <a class="nav-link" href="#">بحث و گفتگو </a>
           </li>
-          <li class="nav-item pr-2">
+          <li class="nav-item pr-2 {% if request.resolver_match.url_name == 'series' %}active{% endif %} ">
               <a class="nav-link" href="/series/">دوره های اموزشی</a>
           </li>
         <li class="nav-item pr-2">

@@ -20,3 +20,6 @@ class Seri(TemplateView):
 
 
 
+def seriesDetail(request,slug):
+    des=Series.objects.get(pk=slug)
+    return render(request,'seriesDetail.html',{'des':des,})

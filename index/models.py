@@ -1,7 +1,5 @@
 from django.db import models
-
-# Create your models here.
-
+import datetime
 class Series(models.Model):
 
     teacher1,teacher2,teacher3='davod vesaghati','mohamad','ali'
@@ -15,7 +13,12 @@ class Series(models.Model):
     explanation=models.TextField(max_length=2000)
     series_photo=models.ImageField(upload_to='images/',default='no-img.jpg',blank=True)
     teacher=models.CharField(max_length=40,choices=teacher_choices,default=teacher1)
+    create_date=models.DateTimeField(auto_now=True)
+    links=models.URLField(blank=True)
 
+
+    class Meta:
+        ordering=('create_date',)
 
     def __str__(self):
         return self.issue

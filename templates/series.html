@@ -23,9 +23,9 @@
 
     {% if series %}
         {% for seri in series %}
-        <div class="col-md-3">
+        <div class="col-md-3 mt-5">
             <!-- Card Regular -->
-<div class="card card-cascade">
+<div class="card card-cascade h-100">
 
   <!-- Card image -->
   <div class="view view-cascade overlay">
@@ -41,11 +41,11 @@
   <div class="card-body card-body-cascade text-center">
 
     <!-- Title -->
-    <h5 class="card-title"><strong>{{ seri.issue }}</strong></h5>
+    <a href="{{ seri.id }}"><h5 class="card-title"><strong>{{ seri.issue }}</strong></h5></a>
     <!-- Subtitle -->
     <h6 class="font-weight-bold indigo-text py-2">{{ seri.teacher}}</h6>
     <!-- Text -->
-    <p class="card-text">{{ seri.explanation }}
+    <p class="card-text">{{ seri.explanation|slice:":100" }} {% if seri.explanation|length > 5 %}...{% endif %}
     </p>
 
   </div>
@@ -69,29 +69,6 @@
   
 </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 {% endblock %}

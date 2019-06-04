@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+
+{% block body %}
+
+<nav class="navbar navbar-expand-md navbar-dark mdb-color mb-5">
+    <!-- Just an image -->
+
+    <div class="container">
+
+            <div class="">
+                
+                    <nav aria-label="breadcrumb">
+                      <ol class="breadcrumb d-inline-flex pl-0 pt-0">
+                        <li class="breadcrumb-item"><a class="white-text" href="/series/">دوره ها</a></li>
+                        <li class="breadcrumb-item active"></li>{{ des.issue }}</li>
+                      </ol>
+                    </nav>
+                
+                  </div>
+                  <!-- Breadcrumb-->
+    </div>
+
+
+  </nav>
+
+
+  <div class="container">
+
+        <h2 class="text-right d-block h2 text-muted">{{ des.issue }}</h2>
+        <div class="list-inline text-right mt-4">
+            <div class="list-inline-item"><i class="fas fa-user-tie"></i> مدرس : {{ des.teacher }}</div>
+            <div class="list-inline-item pr-5"><i class="fas fa-hourglass-half"></i> زمان قرار گیری : {{ des.create_date }}</div>
+            <div class="list-inline-item pr-5"><i class="fas fa-stream"></i> تعداد قسمت ها :</div>
+        </div>
+
+        
+
+        <div>
+            <p class="h5 text-right mt-5">توضیحات:</p>
+            <p class="text-right pb-3">
+                {{ des.explanation }}
+            </p>
+
+            <img class="w-75 d-block" src="/media/{{ des.series_photo }}" alt="">
+        </div>
+
+
+
+
+
+        <table id="dt-material-checkbox" class="table table-striped mt-5" cellspacing="0" width="100%">
+            <p class="text-right mt-4">{{ des.issue }}</p>
+
+                <tbody>
+                {% for video in videos %}
+                  <tr>
+                    <td class="text-center">{{ video.id }}</td>
+
+                        <td class="text-right">{{ video.title }}</td>
+                        <td></td>
+
+
+                    <td>{{ video.type_of }}</td>
+ 
+                  </tr>
+                  {% endfor %}
+
+                </tbody>
+              </table>
+</div>
+
+
+
+
+{% endblock %}
