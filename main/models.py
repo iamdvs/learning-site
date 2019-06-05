@@ -1,5 +1,7 @@
 from django.db import models
 import datetime
+from django.contrib.auth.models import User
+
 class Series(models.Model):
 
     teacher1,teacher2,teacher3='davod vesaghati','mohamad','ali'
