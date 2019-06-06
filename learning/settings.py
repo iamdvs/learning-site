@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main.apps.MainConfig',
+    'users.apps.UsersConfig',
+    'crispy_forms',
+
     
 ]
 
@@ -156,3 +159,6 @@ CKEDITOR_CONFIGS = {
     }
 }
 
+
+
+CRISPY_TEMPLATE_PACK='bootstrap4'
