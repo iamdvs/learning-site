@@ -63,14 +63,21 @@
                  <li class="nav-item pr-2">
               <a class="nav-link" href="#">همکاری با ما</a>
           </li> -->
-
-        <li class="nav-item pr-2 {% if request.resolver_match.url_name == 'register' %}active{% endif %}">
-              <a class="nav-link text-warning text-right " href="{% url 'register' %}">ثبت نام</a>
-          </li>
-        <li class="nav-item pr-2">
-              <a class="nav-link text-success" href="#">ورود</a>
-        </li>
-
+          {% if user.is_authenticated %}
+              <li class="nav-item pr-2 {% if request.resolver_match.url_name == 'profile' %}active{% endif %}">
+                <a class="nav-link text-success text-right " href="{% url 'profile' %}">پروفایل</a>
+              </li>
+              <li class="nav-item pr-2 {% if request.resolver_match.url_name == 'logout' %}active{% endif %}">
+                <a class="nav-link text-danger text-right " href="{% url 'logout' %}">خروج</a>
+              </li>
+          {% else %}
+              <li class="nav-item pr-2 {% if request.resolver_match.url_name == 'register' %}active{% endif %}">
+                    <a class="nav-link text-warning text-right " href="{% url 'register' %}">ثبت نام</a>
+                </li>
+                <li class="nav-item pr-2 {% if request.resolver_match.url_name == 'login' %}active{% endif %}">
+                      <a class="nav-link text-success" href="{% url 'login' %}">ورود</a>
+                </li>
+          {% endif %}
       </ul>
 
       <form class="form-inline mr-auto">
