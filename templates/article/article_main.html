@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="container mt-5">
+
+    <div class="h3 text-right text-muted mb-4">   مقالات </div>
+    
+    
+    <div class="row">
+    
+      {% for article in articles %}
+        <div class="col-md-4 mt-4">
+    
+            <!-- Card -->
+        <div class="card h-100">
+    
+          <!-- Card image -->
+          <div class="view overlay">
+            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/food.jpg" alt="Card image cap">
+            <a>
+              <div class="mask rgba-white-slight"></div>
+            </a>
+          </div>
+    
+    
+          <!-- Card content -->
+          <div class="card-body">
+    
+            <!-- Title -->
+            <a class="card-title h5" href="{% url 'article-detail' article.id %}">{{ article.title }}</a>
+            <hr>
+            <!-- Text -->
+            <p class="card-text">{{  article.content |slice:":100" }} {% if article.content|length > 100 %}...{% endif %}</p>
+    
+          </div>
+    
+            <!-- Card footer -->
+            <div class="rounded-bottom mdb-color lighten-3 text-center pt-3">
+              <ul class="list-unstyled list-inline font-small">
+                <li class="list-inline-item white-text text-right">{{ article.date_posted|date:"F d, y"}}<i class="far fa-clock pr-1 ml-1"></i></li>
+                <li class="list-inline-item"><a href="#" class="white-text">{{ article.auther }}<i class="far fa-comments pr-1"></i></a></li>
+    
+              </ul>
+            </div>
+    
+          </div>
+          <!-- Card -->
+          </div>
+    
+      {% endfor %}
+
+
+
+      </div>
+
+      <div class="mt-4">
+            {% if articles.has_previous %}
+            <a class="btn-sm btn-outline-info mb-4" href="?page=1">اول</a>
+            <a class="btn-sm btn-outline-info mb-4" href="?page={{ articles.previous_page_number }}">قبلی</a>
+        {% endif %}
+<!-- 
+        <span class="current">
+            صفحه ی {{ articles.number }} از {{ articles.paginator.num_pages }}.
+        </span> 
+-->
+
+        {% for  num in articles.paginator.page_range %}
+            {% if articles.number == num %}
+                <button href="?page={{ num }}" class="btn-sm btn-info mb-4" disabled>{{ num }}</button>
+            {% elif num > articles.number|add:'-3' and num < articles.number|add:'3' %}    
+                <a href="?page={{ num }}" class="btn-sm btn-outline-warning mb-4">{{ num }}</a>
+            {% endif %}
+        {% endfor %}    
+                
+        {% if articles.has_next %}
+            <a class="btn-sm btn-outline-info mb-4" href="?page={{ articles.next_page_number }}">بعدی</a>
+            <a class="btn-sm btn-outline-info mb-4" href="?page={{ articles.paginator.num_pages }}">اخر</a>
+        {% endif %}
+
+
+      </div>
+
+
+      </div>
+
+
+
+{% endblock %}      

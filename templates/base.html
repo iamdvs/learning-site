@@ -65,6 +65,9 @@
           </li> -->
           {% if user.is_authenticated %}
               <li class="nav-item pr-2 {% if request.resolver_match.url_name == 'profile' %}active{% endif %}">
+                <a class="nav-link text-secondary text-right " href="{% url 'article-create' %}">ساخت مقاله جدید</a>
+              </li>
+              <li class="nav-item pr-2 {% if request.resolver_match.url_name == 'profile' %}active{% endif %}">
                 <a class="nav-link text-success text-right " href="{% url 'profile' %}">پروفایل</a>
               </li>
               <li class="nav-item pr-2 {% if request.resolver_match.url_name == 'logout' %}active{% endif %}">

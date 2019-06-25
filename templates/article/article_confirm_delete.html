@@ -1,0 +1,46 @@
+{% extends "../base.html" %}
+{% load crispy_forms_tags %}
+{% block body %}
+
+<div class="container mt-5">
+
+
+
+<!-- Material form login -->
+<div class="card w-50 m-auto">
+
+    <h5 class="card-header info-color white-text text-center py-4">
+      <strong>ایا برای حذف مقاله {{ object.title }} مطمعن هستید؟</strong>
+    </h5>
+  
+    <!--Card content-->
+    <div class="card-body px-lg-5 pt-0">
+  
+      <!-- Form -->
+      <form method="POST" class="text-center" style="color: #757575;">
+
+        
+          {% csrf_token %}
+
+     
+
+
+        <!-- Sign in button -->
+        <button class="btn btn-danger btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit"> بله حذف شود</button>
+        <a class="btn btn-danger btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" href="{% url 'article-detail' object.id %}">انصراف</a>
+
+ 
+  
+
+      </form>
+      <!-- Form -->
+  
+    </div>
+  
+  </div>
+  <!-- Material form login -->
+
+</div>
+
+
+  {% endblock %}
